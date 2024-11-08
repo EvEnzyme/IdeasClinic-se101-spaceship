@@ -494,7 +494,7 @@ let DOM: any = {
     DOM.menus["EndScreen"].querySelector("#ESResources").innerHTML = Math.round(planet.composition.survivabilityChance)
     DOM.menus["EndScreen"].querySelector("#ESScore").innerHTML = getScore(planet.composition.survivabilityChance, game.watchShip?.energyUsed || 0, game.watchShip?.totalDamage || 0, game.galaxy)
     const ourImageSrc = imageSrcs.filter((element) => {return element[0] === planet.imageName});
-    DOM.menus["EndScreen"].querySelector("#ESPlanetImage").src = spritePath + ourImageSrc[0][1] ?? 'planets/Mars.png'
+    DOM.menus["EndScreen"].querySelector("#ESPlanetImage").src = spritePath + (ourImageSrc[0][1] ?? 'planets/Mars.png')
     DOM.menus["EndScreen"].querySelector("#ESPlanetName").innerHTML = planet.name
 	  const summary = generateSummary(planet.composition)
     DOM.menus["EndScreen"].querySelector("#ESPlanetInfo").innerHTML = summary
